@@ -18,8 +18,12 @@ try {
     if (line == 'exit') {
       process.exit(0);
     }
+    else {
+      // stdin.on('data', chunk => ws.write(chunk));
+      ws.write(`${line}\n`);
+    }
   });
-  stdin.on('data', chunk => ws.write(chunk));
+ 
   stdin.on('error', error => console.log('Error', error.message));
 } catch (error) {
   console.log(error);
