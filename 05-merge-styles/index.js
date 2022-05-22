@@ -3,7 +3,6 @@ const path = require('path');
 const process = require('process');
 
 
-
 let pathToFile = path.dirname(__filename);
 let newPath = path.join(pathToFile, '/project-dist');
 
@@ -22,10 +21,6 @@ try {
         ws.on('error', function(err) {
           console.log(err);
         });
-        ws.on('close', () => {
-          process.exit();
-        });
-
         rs.pipe(ws);
 
       }
