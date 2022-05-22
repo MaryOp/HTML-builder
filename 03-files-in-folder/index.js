@@ -1,7 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 
-
 let pathToFile = path.dirname(__filename);
 let secretPath = path.join(pathToFile,'/secret-folder');
 
