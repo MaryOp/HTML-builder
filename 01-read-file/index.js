@@ -1,14 +1,18 @@
-const fs = require("fs");
-const path = require("path");
+const fs = require('fs');
+const path = require('path');
 
 
-pathToFile = path.dirname(__filename);
-const rs = fs.createReadStream(path.join(pathToFile,"text.txt"));
+let pathToFile = path.dirname(__filename);
+const rs = fs.createReadStream(path.join(pathToFile,'text.txt'));
 
-rs.on("data", function(chunk){ 
+try {
+  rs.on('data', function(chunk){ 
     console.log(chunk.toString());
-});
+  });
+} catch (error) {
+  console.log(error);
+}
 
 rs.on('end', function(){
-    console.log("\nЧтение из файла завершено");
+  console.log('\nЧтение из файла завершено');
 });

@@ -1,6 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-// const process = require('process');
 
 
 let pathToFile = path.dirname(__filename);
@@ -14,7 +13,6 @@ try {
   fs.readdir(path.join(pathToFile,'/files'), (err, data) => {
     if (err) throw err;
     data.forEach(file => {
-      // console.log(file + '\n' + path.join(newPath, file));
       fs.copyFile(path.join(pathToFile,'/files',file), path.join(newPath, file), () => {
         if (err) throw err;
       });
